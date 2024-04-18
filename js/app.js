@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     var button = document.getElementById('btnCoordenadas');
     button.addEventListener('click', function() {
-        initMap(); 
+        iniciarCoordenadas(); 
     });
 });
 
-function initMap() {
+function iniciarCoordenadas() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var latitude = position.coords.latitude;
