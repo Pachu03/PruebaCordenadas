@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('btnCoordenadas');
+    button.addEventListener('click', function() {
+        initMap(); 
+    });
+});
+
 function initMap() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -22,14 +29,12 @@ function initMap() {
                 zoom: 15
             };
 
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
             var marker = new google.maps.Marker({
                 position: {
                     lat: latitude,
                     lng: longitude
                 },
-                map: map
             });
         });
     } else {
